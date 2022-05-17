@@ -7,6 +7,7 @@
 |    2    |   팀원  | [서정목](https://github.com/SeoJeongmok) |  컴퓨터공학과  |   2    |  010-9005-6102  |             |
 |    3    |   팀원  | [조송하](https://github.com/Song-haJo)   |    무역학과    |   3    |  010-3808-8152  |             |
 |    4    |   팀원  | [허영준](https://github.com/telecom9005) |  컴퓨터공학과  |   2    |  010-2748-9005  |             |
+<hr/>
 
 ## 1. 과제 요약
 
