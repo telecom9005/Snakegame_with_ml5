@@ -105,13 +105,13 @@ function draw() {
 
 
   if (label == 0) {
-    s.dir(-1,0);
+    s.dir(0,1);
   } else if (label == 1) {
     s.dir(1,0);
   } else if (label == 2) {
     s.dir(0,-1);
   } else if (label == 3) {
-    s.dir(0,1);
+    s.dir(-1,0);
   }
 
   //image(video, 0, 0);
