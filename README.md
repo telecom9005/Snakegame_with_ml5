@@ -41,5 +41,5 @@
 ## 6. 참고문헌 및 자료(추후 수정 예정)
 [1] https://ml5js.org/
 
-[2] 
+[2] https://wikidocs.net/103185
 
