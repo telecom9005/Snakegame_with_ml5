@@ -27,14 +27,14 @@
     <table>
         <thead>
             <tr>
-                <th colpan="7">정성적 평가</th>
+                <th colspan="7">정성적 평가</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th rowspan="2">번호</th>
                 <th rowspan="2">평가 기준</th>
-                <th colspan="">평가 척도</th>
+                <th colspan="5">평가 척도</th>
             </tr>
             <tr>
                 <th>매우 그렇다</th>
