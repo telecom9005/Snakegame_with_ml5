@@ -77,7 +77,8 @@
     1모양으로 검지를 올리면 위쪽, 주먹쥔 상태면 아래쪽, 엄지를 피면 왼쪽, 소지를 피면 오른쪽으로 방향을 설정하게 된다.<br/>
     손으로 방향 지정 방법<br/>
     <div align="center">
-    <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png" alt="위"/>
+    <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/>
+    <figcaption>위</figcaption>
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/>
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/>
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/>
