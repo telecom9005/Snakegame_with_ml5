@@ -127,12 +127,12 @@
 |   4  |  발표자료 제작  |   2022.05.24. - 2022.05.30.  |     비고    |
 
 ## 6. 참고문헌 및 자료
-[1] https://ml5js.org/
+[1] https://ml5js.org/(accessed May 17, 2021)
 
-[2] https://wikidocs.net/103185
+[2] Find points by hand(2020)https://wikidocs.net/103185(accessed May 17, 2021)
 
-[3] https://www.dementianews.co.kr/news/articleView.html?idxno=3863
+[3] Frontline dementia management site...Increased use of dementia prevention games(2021)https://www.dementianews.co.kr/news/articleView.html?idxno=3863(accessed May 17, 2021)
 
-[4] https://en.wikipedia.org/wiki/Snake_(video_game_genre)
+[4] Snake (video game genre)(2022)https://en.wikipedia.org/wiki/Snake_(video_game_genre)(accessed May 17, 2021)
 
-[5] https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661
+[5] Introduction to ML⁵.js(2018)https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661(accessed May 17, 2021)
