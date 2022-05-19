@@ -133,6 +133,6 @@
 
 [3] https://www.dementianews.co.kr/news/articleView.html?idxno=3863
 
-[4] https://en.wikipedia.org/wiki/Snake_(video_game_genre)
+[4] Snake (video game genre)(2022)https://en.wikipedia.org/wiki/Snake_(video_game_genre)(accessed May 17, 2021)
 
-[5] https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661
+[5] Introduction to ML⁵.js(2018)https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661(accessed May 17, 2021)
