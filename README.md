@@ -77,34 +77,69 @@
             </tr>
         </tbody>
     </table>
-    <h3><li>과제 내용 (글, 그림, 표, 사진 등으로 이 내용을 보면 다른 사람이 동일한 작품을 만들 수 있도록 한다.)</li></h3>
-    손가락의 각 마디와 손목 부위로 21개의 포인트가 나타나고, 손 모양에 따라 포인트의 위치가 변경된다.
-    손을 위로 올리면 위쪽, 내리면 아래쪽, 왼쪽 방향으로 하면 왼쪽, 오른쪽 방향으로 하면 오른쪽으로 방향을 설정하게 된다.<br/>
-    <div align="center">
-    <손으로 방향 지정 방법><br/>
-    </div>
-    <div align="center">
-        <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/>
-    </div>
-    <div align='center'>
-    위
-    </div>
-    <div align="center">
-        <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/>
-        <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/>
-    </div>
-    <div align="center">
-        오른쪽 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 왼쪽
-    </div>
-    <div align="center">
-        <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/>
-    </div>
-    <div align="center">
-        아래
-    </div>
-        <br/>
-    snakegame의 뱀의 이동방향은 손의 모양으로 결정되며, 뱀이 음식을 먹을 때마다 뱀의 길이가 길어지고 뱀이 벽에 부딪치거나 자신의 몸에 부딪치게되면 gameover가 된다.
-</ol>
+    <h3><li>과제 내용 및 수행 </li></h3>
+     <ol type="a">
+        <h4><li>머신러닝 모델 선택(22.05.16.월-22.05.17.화)</li></h4>
+        ml5.js 머신러닝 라이브러리에서 활용할 모델을 선택한다. ml5js.org 홈페이지의 Reference 페이지와 Prof. Daniel Shiffman의 유튜브 채널 Coding Train을 참고하여 주제와 관련된 모델들의 기능을 익힌 후, 비교·대조를 통해 KNNClassifier와 Handpose 중 후자를 선택하였다. KNNClassifier(K-Nearest Neighbors Classifier)는 신체 전체의 포즈를 파악하는 모델로, 초기 팔부터 손까지에 해당하는 부위를 움직여 조종하는 기능을 구상할 때 고려하였으나, 보다 높은 정확도와 편의성을 위해 손 동작만 인식하는 Handpose로 대체하였다.
+        <h4><li>손 모양 학습 진행 및 손 동작 인식 기능 추가(22.05.18.수-)</li></h4>
+        선택한 모델을 적용하여 손 모양을 학습시킨 후, 학습 파일을 게임 내부에서 load하여 손 동작 인식 기능을 추가한다. 학습 파일의 확장자는 .json으로, 과도하지도 부족하지도 않은 적정한 학습에 의해 생성되어야 한다.
+        
+  <table align="center">
+            <tr>
+                <th rowspan="2">이동 방향</th>
+                <th colspan="2">손의 방향</th>
+            </tr>
+            <tr>
+                <th>플레이어 시점</th>
+                <th>카메라 시점<br/>(웹캠 촬영 사진 첨부)</th>
+            </tr>
+            <tr>
+                <td align="center">상</td>
+                <td align="center">위</td>
+                <td align="center">손바닥이 보이는 상태로 손가락 끝이 위를 향한다.<br/><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/></td>
+            </tr>
+            <tr>
+                <td align="center">하</td>
+                <td align="center">아래</td>
+                <td align="center">손등이 보이는 상태로 손가락 끝이 아래를 향한다.<br/><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/></td>
+            </tr>
+            <tr>
+                <td align="center">좌</td>
+                <td align="center">좌측</td>
+                <td align="center">손등이 보이는 상태로 손가락 끝이 왼쪽을 향한다.<br/><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/></td>
+            </tr>
+            <tr>
+                <td align="center">우</td>
+                <td align="center">우측</td>
+                <td align="center">손바닥이 보이는 상태로 손가락 끝이 오른쪽을 향한다.<br/><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/></td>
+            </tr>
+        </table>
+        <h4 align="center">&lt;손 모양 사진&gt;</h4>
+        <table border="0" align="center">
+        <tr>
+            <td colspan="3" align="center"><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/><br/>상</td>
+        </tr>
+        <tr>
+            <td align="center">
+                <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/><br/>좌
+            </td>
+            <td width="200px"></td>
+            <td align="center">
+                <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/><br/>우
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center"><img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/><br/>하</td>
+        </tr>
+    </table>
+        ml5_code.js 파일은 KNNClassifier 모델을 사용한 프로그램으로 초기 버전이며, Handpose를 이용한 버전이 곧 추가될 예정이다.
+        <h4><li>Snake 게임 디자인 개선 및 기능 디버깅</li></h4>
+        기능을 추가시킨 후, 인식이 잘 되는지 여부를 확인하고 오류가 있거나 개선이 필요한 부분은 수정한다.
+        <ul>
+            <li>기존 Snake 게임은 뱀이 음식을 먹을 때마다 뱀의 길이가 길어지고, 뱀이 벽이나 자신의 몸에 부딪치면 game over 되는 방식이다. ml5_code.js를 통한 시험 과정에서 뱀이 3칸 이상일 때, 바로 반대 방향으로 방향을 틀면 죽는 현상을 발견하였다. 머신러닝을 통한 동작 인식과 그에 의한 조작은 키보드를 이용할 때보다 덜 정확하므로, 게임 진행에 융통성이 필요하다. 따라서, 스스로의 몸에 닿으면 죽는 판정을 삭제하였다.</li>
+        </ul>
+        또한, 기존의 Snake 게임의 디자인적 부분과 게임 자체 기능을 향상시킨다.(예정)
+    </ol>
 
 ## 4. 결과물
 <ol type="i">
@@ -115,7 +150,7 @@
         <li>최종적으로, 키보드로 방향 키를 누르지 않고, 손 모양을 바꿔가면서 즐겁게 스네이크 게임을 플레이할 수 있도록 한다.</li>
     </ul>
     <h3><li>기대효과 및 활용방안</li></h3>
-    최근 지역 치매안심센터 등 노인 관련 기관에 따르면 치매예방 게임교실 등 게임적 요소를 활용한 치매예방 프로그램을 적극 활용 중인 것으로 나타났다.<sup>[3]</sup> 게임의 경우, 단순 인지훈련을 넘어 시각, 촉각, 청각은 물론 공감각, 대인 소통 등 다양한 감각을 동원해 문제를 해결하는 과정을 포함하고 있어 치매예방에 효과적이라는 전문가 평가가 다수 있다. 본 게임은 단순한 동작으로 작동하는 게임이므로 어르신들이 익히기 쉬우며, 조작하는 과정에서 벽과 먹이라는 요소를 신경 써야 하기 때문에 치매예방에 좋은 효과를 줄 것으로 기대된다.
+    최근 지역 치매안심센터 등 노인 관련 기관에 따르면 치매예방 게임교실 등 게임적 요소를 활용한 치매예방 프로그램을 적극 활용 중인 것으로 나타났다.<sup>[3]</sup> 게임의 경우, 단순 인지훈련을 넘어 시각, 촉각, 청각은 물론 공감각, 대인 소통 등 다양한 감각을 동원해 문제를 해결하는 과정을 포함하고 있어 치매예방에 효과적이라는 전문가 평가가 다수 있다. 본 게임은 단순한 동작으로 작동하는 게임이므로 어르신들이 익히기 쉬우며, 조작하는 과정에서 '벽'이라는 장애물과 생존에 필요한 '먹이'와 같이 다양한 요소를 신경 써야 하기 때문에 치매예방에 좋은 효과를 줄 것으로 기대된다.
 </ol>
 
 ## 5. 수행일정
