@@ -27,14 +27,14 @@
     <table>
         <thead>
             <tr>
-                <th colspan="7">정성적 평가</th>
+                <th colpan="7">정성적 평가</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th rowspan="2">번호</th>
                 <th rowspan="2">평가 기준</th>
-                <th colspan="5">평가 척도</th>
+                <th colspan="">평가 척도</th>
             </tr>
             <tr>
                 <th>매우 그렇다</th>
@@ -44,7 +44,7 @@
                 <th>전혀 그렇지 않다</th>
             </tr>
             <tr>
-                <td style="text-align: center">1</td>
+                <td>1</td>
                 <td>과제 내용이 Graphics와 관련이 있는가?</td>
                 <td style="text-align: center">5</td>
                 <td style="text-align: center">4</td>
