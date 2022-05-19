@@ -44,31 +44,31 @@
                 <th>전혀 그렇지 않다</th>
             </tr>
             <tr>
-                <td>1</td>
+                <td style="text-align: center">1</td>
                 <td>과제 내용이 Graphics와 관련이 있는가?</td>
-                <td>5</td>
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
+                <td style="text-align: center">5</td>
+                <td style="text-align: center">4</td>
+                <td style="text-align: center">3</td>
+                <td style="text-align: center">2</td>
+                <td style="text-align: center">1</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>손 모양을 정확하게 인식하는가?</td>
-                <td>5</td>
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
+                <td style="text-align: center">5</td>
+                <td style="text-align: center">4</td>
+                <td style="text-align: center">3</td>
+                <td style="text-align: center">2</td>
+                <td style="text-align: center">1</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Snake를 자신이 원하는 방향으로 움직일 수 있는가?</td>
-                <td>5</td>
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
+                <td style="text-align: center">5</td>
+                <td style="text-align: center">4</td>
+                <td style="text-align: center">3</td>
+                <td style="text-align: center">2</td>
+                <td style="text-align: center">1</td>
             </tr>
         </tbody>
     </table>
