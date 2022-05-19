@@ -83,7 +83,6 @@
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/>
     </div>
     <div align="center">
-        위 아래 오른쪽 왼쪽
     </div>
         <br/>
     snakegame의 뱀의 이동방향은 손의 모양으로 결정되며, 뱀이 음식을 먹을 때마다 뱀의 길이가 길어지고 뱀이 벽에 부딪치거나 자신의 몸에 부딪치게되면 gameover가 된다.
