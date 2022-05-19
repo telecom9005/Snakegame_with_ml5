@@ -33,7 +33,7 @@
         <tbody>
             <tr>
                 <th rowspan="2">번호</th>
-                <th rowspan="2" width="450px">평가 기준</th>
+                <th rowspan="2" width="400px">평가 기준</th>
                 <th colspan="5">평가 척도</th>
             </tr>
             <tr>
@@ -63,7 +63,7 @@
             </tr>
             <tr>
                 <td align="center">3</td>
-                <td>Snake를 자신이 원하는 방향으로 움직일 수 있는가?</td>
+                <td>뱀을 자신이 원하는 방향으로 움직일 수 있는가?</td>
                 <td align="center">5</td>
                 <td align="center">4</td>
                 <td align="center">3</td>
