@@ -24,28 +24,52 @@
 ## 3. 과제 목표 및 내용
 <ol type="i">
     <h3><li>정량적·정성적 목표 및 평가 기준</li></h3>
+    
     <table>
         <thead>
             <tr>
-                <th>정성적 평가</th>
+                <th colpan="3">정성적 평가</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>평가 기준</th>
-                <th>평가 척도</th>
+                <th rowspan="2">번호</th>
+                <th rowspan="2">평가 기준</th>
+                <th colspan="">평가 척도</th>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <th>매우 그렇다</th>
+                <th>그렇다</th>
+                <th>보통이다</th>
+                <th>그렇지 않다</th>
+                <th>전혀 그렇지 않다</th>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>과제 내용이 Graphics와 관련이 있는가?</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <td>2</td>
+                <td>손 모양을 정확하게 인식하는가?</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Snake를 자신이 원하는 방향으로 움직일 수 있는가?</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
             </tr>
         </tbody>
     </table>
