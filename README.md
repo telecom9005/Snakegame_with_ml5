@@ -33,7 +33,7 @@
         <tbody>
             <tr>
                 <th rowspan="2">번호</th>
-                <th rowspan="2" width="400px">평가 기준</th>
+                <th rowspan="2" width="420px">평가 기준</th>
                 <th colspan="5">평가 척도</th>
             </tr>
             <tr>
