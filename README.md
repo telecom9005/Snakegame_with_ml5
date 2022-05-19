@@ -1,4 +1,4 @@
-# <span style="color:gold">아브라카다브라!</span>
+# 아브라카다브라!
 #### 과목명: 컴퓨터 그래픽스<br/>지도교수: 컴퓨터공학과 심재창<br/>프로젝트명: 아브라카다브라! (Abracadabra!)<br/>과제명: 아브라카다브라<br/>프로젝트 팀: 피리부는 사나이(10팀)<hr/>
 ### 팀 구성
 |   번호   |   구분  |                   이름                  |      학과     |   학년  |      휴대폰     |        담당업무        |
@@ -126,13 +126,15 @@
 |   3  |     2차 구현    |         2022.05.23.          |  Snake 디자인 수정  |
 |   4  |  발표자료 제작  |   2022.05.24. - 2022.05.30.  | ppt, 리플릿, 동영상 제작  |
 
-## 6. 참고문헌 및 자료
-[1] https://ml5js.org/(accessed May 17, 2021)
+## 6. 참고문헌 및 자료 (References written in IEEE format)
+[1] ml5js·Friendly Machine Learning For The Web. https://ml5js.org/ (accessed May 17, 2022)
 
-[2] Find points by hand(2020)https://wikidocs.net/103185(accessed May 17, 2021)
+[2] KiWoon. "11.7 Finding points on each part of a hand: Handpose." p5 JavaScript and ml5 Machine Learning Library - WikiDocs. (2020). Accessed: May 17, 2022. [Online]. Available: https://wikidocs.net/103185 
 
-[3] Frontline dementia management site...Increased use of dementia prevention games(2021)https://www.dementianews.co.kr/news/articleView.html?idxno=3863(accessed May 17, 2021)
+[3] J. Jo, "The Frontline of The Dementia Patient Care Center. Increase in The Use of Games for Dementia Prevention." DementiaNews. https://www.dementianews.co.kr/news/articleView.html?idxno=3863 (accessed May 17, 2022)
 
-[4] Snake (video game genre)(2022)https://en.wikipedia.org/wiki/Snake_(video_game_genre)(accessed May 17, 2021)
+[4] "Snake (video game genre)." Wikipedia. https://en.wikipedia.org/wiki/Snake_(video_game_genre) (accessed May 17, 2022)
 
-[5] Introduction to ML⁵.js(2018)https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661(accessed May 17, 2021)
+[5] A. Lamba, "Introduction to ML⁵.js - A Beginner’s Friendly Machine Learning for the Web." Towards Data Science - Medium. https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661 (accessed May 17, 2022)
+
+    [6] The Coding Train. https://thecodingtrain.com/ (accessed May 17, 2022)
