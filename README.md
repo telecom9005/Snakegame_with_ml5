@@ -137,4 +137,4 @@
 
 [5] A. Lamba, "Introduction to ML⁵.js - A Beginner’s Friendly Machine Learning for the Web." Towards Data Science - Medium. https://towardsdatascience.com/introduction-to-ml5-js-3fe51d6a4661 (accessed May 17, 2022)
 
-    [6] The Coding Train. https://thecodingtrain.com/ (accessed May 17, 2022)
+[6] The Coding Train. https://thecodingtrain.com/ (accessed May 17, 2022)
