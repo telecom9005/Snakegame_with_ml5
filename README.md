@@ -78,11 +78,11 @@
     손으로 방향 지정 방법<br/>
     <div align="center">
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/>
+        위
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/>
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/>
     <img width="195px" height="145px" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/>
     </div>
-                     위                 아래                   오른쪽              왼쪽
         <br/>
     snakegame의 뱀의 이동방향은 손의 모양으로 결정되며, 뱀이 음식을 먹을 때마다 뱀의 길이가 길어지고 뱀이 벽에 부딪치거나 자신의 몸에 부딪치게되면 gameover가 된다.
 </ol>
