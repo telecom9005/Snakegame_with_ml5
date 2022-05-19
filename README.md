@@ -37,38 +37,38 @@
                 <th colspan="5">평가 척도</th>
             </tr>
             <tr>
-                <th>매우 그렇다</th>
-                <th>그렇다</th>
-                <th>보통이다</th>
-                <th>그렇지 않다</th>
-                <th>전혀 그렇지 않다</th>
+                <th width="120px">매우 그렇다</th>
+                <th width="120px">그렇다</th>
+                <th width="120px">보통이다</th>
+                <th width="120px">그렇지 않다</th>
+                <th width="120px">전혀 그렇지 않다</th>
             </tr>
             <tr>
-                <td><center>1</center></td>
+                <td align="center">1</td>
                 <td>과제 내용이 Graphics와 관련이 있는가?</td>
-                <td><center>5</center></td>
-                <td><center>4</center></td>
-                <td><center>3</center></td>
-                <td><center>2</center></td>
-                <td><center>1</center></td>
+                <td align="center">5</td>
+                <td align="center">4</td>
+                <td align="center">3</td>
+                <td align="center">2</td>
+                <td align="center">1</td>
             </tr>
             <tr>
-                <td><center>2</center></td>
+                <td align="center">2</td>
                 <td>손 모양을 정확하게 인식하는가?</td>
-                <td><center>5</center></td>
-                <td><center>4</center></td>
-                <td><center>3</center></td>
-                <td><center>2</center></td>
-                <td><center>1</center></td>
+                <td align="center">5</td>
+                <td align="center">4</td>
+                <td align="center">3</td>
+                <td align="center">2</td>
+                <td align="center">1</td>
             </tr>
             <tr>
-                <td><center>3</center></td>
+                <td align="center">3</td>
                 <td>Snake를 자신이 원하는 방향으로 움직일 수 있는가?</td>
-                <td><center>5</center></td>
-                <td><center>4</center></td>
-                <td><center>3</center></td>
-                <td><center>2</center></td>
-                <td><center>1</center></td>
+                <td align="center">5</td>
+                <td align="center">4</td>
+                <td align="center">3</td>
+                <td align="center">2</td>
+                <td align="center">1</td>
             </tr>
         </tbody>
     </table>
