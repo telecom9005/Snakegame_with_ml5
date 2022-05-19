@@ -75,8 +75,11 @@
     <h3><li>과제 내용 (글, 그림, 표, 사진 등으로 이 내용을 보면 다른 사람이 동일한 작품을 만들 수 있도록 한다.)</li></h3>
     손가락의 각 마디와 손목 부위로 21개의 포인트가 나타나고, 손 모양에 따라 포인트의 위치가 변경된다.
     1모양으로 검지를 올리면 위쪽, 주먹쥔 상태면 아래쪽, 엄지를 피면 왼쪽, 소지를 피면 오른쪽으로 방향을 설정하게 된다.<br/>
-    위로 방향지정하는 손모양<br/>
-    <img width="30%" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/><br/>
+    손으로 방향 지정 방법<br/>
+    <img width="20%" src="https://user-images.githubusercontent.com/102509603/169253224-041bb900-0f92-46f3-b136-f3b2bfdd0028.png"/>
+    <img width="20%" src="https://user-images.githubusercontent.com/102509603/169255285-7e919de5-c45b-429d-b871-0572356d6b34.png"/>
+    <img width="20%" src="https://user-images.githubusercontent.com/102509603/169256106-72e3e64a-77e8-4a1e-9f6a-e8fb9a3dccac.png"/>
+    <img width="20%" src="https://user-images.githubusercontent.com/102509603/169256768-f8b3ccb0-2155-40ee-925c-81be35ec8ec4.png"/><br/>
     snakegame의 뱀의 이동방향은 손의 모양으로 결정되며, 뱀이 음식을 먹을 때마다 뱀의 길이가 길어지고 뱀이 벽에 부딪치거나 자신의 몸에 부딪치게되면 gameover가 된다.
 </ol>
 
