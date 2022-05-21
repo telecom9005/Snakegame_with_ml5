@@ -1,3 +1,4 @@
+//<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 //손목이 0, 엄지가 4, 소지가 20입니다. [0]가 x좌표 [1]가 y좌표입니다.
 //기본적으로 엄지와 손목으로 구분을 해봤는데 위쪽와 왼쪽은 조건이 같아서 엄지와 소지로 구분했습니다.
 let handpose;
