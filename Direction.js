@@ -25,9 +25,6 @@ function draw() {
 function drawKeypoints() {
   for (let i = 0; i < predictions.length; i += 1) {
     const prediction = predictions[i];
-    const n20 = prediction.landmarks[20];
-    const n4 = prediction.landmarks[4];
-    const n0 = prediction.landmarks[0];
     const k20 = prediction.landmarks[20];
     const k4 = prediction.landmarks[4];
     const k0 = prediction.landmarks[0];
