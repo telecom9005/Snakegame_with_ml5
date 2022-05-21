@@ -23,12 +23,12 @@ function draw() {
 
 function drawKeypoints() {
   for (let i = 0; i < predictions.length; i += 1) {
-    const prediction = predictions[i];
-    for (let j = 0; j < prediction.landmarks.length; j += 1) {
+    const prediction = predictions[i];  //prediction이라는 변수에 카메라가 인식하고 있는 값을 넣기
+    for (let j = 0; j < prediction.landmarks.length; j += 1) {  //포인트 0~20까지
       const keypoint = prediction.landmarks[j];
       fill(0, 255, 0);
       noStroke();
-      ellipse(keypoint[0], keypoint[1], 10, 10);
+      ellipse(keypoint[0], keypoint[1], 10, 10);  //j번째의 x, y좌표
     }
   }
 }
