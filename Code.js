@@ -1,14 +1,15 @@
 //Direction과 Snake를 합친 코드입니다. 
-//길이가 3이상일때 가던 방향의 반대 방향으로 가거나 벽에 부딪치면 죽는 판정을 빼고 먹으면 죽는 먹이를 추가하는 게 게임을 플레이하기에 수월해 보입니다.
+//길이가 3이상일때 가던 방향의 반대 방향으로 가거나 벽에 부딪치면 죽는 판정을 빼고 먹으면 죽는 먹이를 추가하는 게 게임을 플레이하기에 수월해 보입니다. <- 수정완료
 //손이 카메라에서 벗어나기가 쉬워서 카메라 안에 들어오는지 확인할 수 있도록 게임 화면의 왼쪽이나 오른쪽에 비디오를 넣는 것도 좋아 보입니다.
 let handpose;
 let video;
 let predictions = [];
+
 var s;
 var scl = 20;
 var food;
-playfield = 600;
-
+var obstacle;
+var playfield = 600;
 function setup() {
   createCanvas(600, 640);
   video = createCapture(VIDEO);
@@ -16,10 +17,11 @@ function setup() {
   handpose = ml5.handpose(video);
   handpose.on("predict", gotResult);
   
-  background(51); //배경색
+   background(51); //배경색
   s = new Snake(); //스네이크 함수 생성
   frameRate (10);//프레임 시작값은 60이기 때문에 속도를 조정해 줌
-  pickLocation(); //pickLocation 함수 생성
+  foodLocatrion(); //foodLocatrion 함수 생성
+  ObstacleLocatrion();
 }
 
 function gotResult(results){
@@ -28,17 +30,21 @@ function gotResult(results){
 
 function draw() {
   drawKeypoints();
-  
   background(51); //배경색 설정
   scoreboard(); //scoreboard 함수 실행
-  if (s.eat(food)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
-    pickLocation(); //pickLocation 함수 실행
+  if (s.eatf(food)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
+    foodLocatrion(); //foodLocatrion 함수 실행
   }
-  s.death(); // Snake 함수 안의 death 함수 실행
+  if (s.eato(obstacle)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
+  ObstacleLocatrion(); //foodLocatrion 함수 실행
+  }
+ // s.death(); // Snake 함수 안의 death 함수 실행
   s.update(); // Snake 함수 안의 update 함수 실행
   s.show(); // Snake 함수 안의 show 함수 실행
   fill (255,0,100); 
   ellipse(food.x,food.y, scl, scl); // 음식 생성
+  fill (0,255,0); 
+  ellipse(obstacle.x,obstacle.y, scl, scl);
 }
 
 function drawKeypoints() {
@@ -58,7 +64,7 @@ function drawKeypoints() {
   }
 }
 
-function pickLocation() { 
+function foodLocatrion() { 
   // var cols = floor(playfield/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
   var rows = floor(playfield/scl); 
   cols = floor(random(30))*scl;
@@ -71,7 +77,25 @@ function pickLocation() {
     var pos = s.tail[i];
     var d = dist(food.x, food.y, pos.x, pos.y);
     if (d < 20) {
-      pickLocation();
+      foodLocatrion();
+    }
+  }
+}
+//장애물 위치 설정
+function ObstacleLocatrion() { 
+  // var cols = floor(playfield/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
+  var rows = floor(playfield/scl); 
+  cols = floor(random(30))*scl;
+  rows = floor(random(30))*scl;
+  obstacle = createVector(10, 10);
+  obstacle.add(cols,rows); //백터에 scl를 더함
+  //food.mult(scl);
+  // Check the food isn't appearing inside the tail
+  for (var i = 0; i < s.tail.length; i++) { 
+    var pos = s.tail[i];
+    var d = dist(obstacle.x, obstacle.y, pos.x, pos.y);
+    if (d < 20) {
+      ObstacleLocatrion();
     }
   }
 }
@@ -103,7 +127,7 @@ function Snake() {
     this.yspeed = y;
   }
 //함수 생성, 음식을 먹을 때 점수를 1점씩 추가하고, 현재 점수가 최고 점수일 때 최고점수 변환
-  this.eat = function(pos) { 
+  this.eatf = function(pos) { 
     var d = dist(this.x, this.y, pos.x, pos.y); // 음식과 뱀의 거리를 구한다.
     if (d < 1) { //d<1 : 뱀이 음식을 먹었을 때,
       this.total++;
@@ -118,8 +142,20 @@ function Snake() {
       return false; //false 반환
     }
 }
+// 장애물을 먹을 때 점수, 꼬리 초기화
+  this.eato = function(pos) { 
+    var d = dist(this.x, this.y, pos.x, pos.y); // 장애물과 뱀의 거리를 구한다.
+    if (d < 1) { //d<1 : 뱀이 장애물을 먹었을 때,
+      this.total=0;
+      this.score=0;
+      this.tail = [];
+      return true; //true 반환
+    } else {
+      return false; //false 반환
+    }
+}
  //함수 생성, 머리가 꼬리에 닿으면 점수, 꼬리 초기화 
-  this.death = function() { //death 
+/*  this.death = function() { //death 
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
       var d = dist(this.x, this.y, pos.x, pos.y);
@@ -129,7 +165,7 @@ function Snake() {
         this.tail = [];
       }
     }
-  }
+  }*/
  // 뱀 움직임을 표시하기 위한 좌표 설정 
   this.update = function(){
     if (this.total === this.tail.length) {
@@ -151,6 +187,7 @@ function Snake() {
     }
     ellipse(this.x, this.y, scl, scl);
   }
+  this.reset = function(){ //Reset을 위한 함수를 따로 생성함. 첫 시작값과 똑같이 감.
   this.x =10;
   this.y =10;
   this.xspeed = 1;
@@ -159,4 +196,6 @@ function Snake() {
   this.tail = [];
   this.score = 1;
   this.highscore = 1;
+  }
+
 }
