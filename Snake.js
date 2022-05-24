@@ -3,10 +3,11 @@ var s;
 var scl = 20;
 var food;
 var obstacle;
-playfield = 600;
+var playfieldW = 600;
+var playfieldH = 640;
 // p5js Setup function - required required, setup 함수
 function setup() {
-  createCanvas(playfield, 640); //캔버스 생성
+  createCanvas(playfieldW, playfieldH); //캔버스 생성
   background(51); //배경색
   s = new Snake(); //스네이크 함수 생성
   frameRate (10);//프레임 시작값은 60이기 때문에 속도를 조정해 줌
@@ -23,7 +24,7 @@ function draw() {
   if (s.eato(obstacle)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
   ObstacleLocatrion(); //foodLocatrion 함수 실행
   }
- // s.death(); // Snake 함수 안의 death 함수 실행
+  s.death(); // Snake 함수 안의 death 함수 실행
   s.update(); // Snake 함수 안의 update 함수 실행
   s.show(); // Snake 함수 안의 show 함수 실행
   fill (255,0,100); 
@@ -33,8 +34,8 @@ function draw() {
 }
 // Pick a location for food to appear //음식 표시 위치 선택 함수
 function foodLocatrion() { 
-  // var cols = floor(playfield/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
-  var rows = floor(playfield/scl); 
+  // var cols = floor(playfieldW/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
+  var rows = floor(playfieldW/scl); 
   cols = floor(random(30))*scl;
   rows = floor(random(30))*scl;
   food = createVector(10, 10);
@@ -51,8 +52,8 @@ function foodLocatrion() {
 }
 //장애물 위치 설정
 function ObstacleLocatrion() { 
-  // var cols = floor(playfield/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
-  var rows = floor(playfield/scl); 
+  // var cols = floor(playfieldW/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
+  var rows = floor(playfieldW/scl); 
   cols = floor(random(30))*scl;
   rows = floor(random(30))*scl;
   obstacle = createVector(10, 10);
@@ -122,18 +123,24 @@ function Snake() {
       return false; //false 반환
     }
 }
- //함수 생성, 머리가 꼬리에 닿으면 점수, 꼬리 초기화 
-/*  this.death = function() { //death 
+  this.death = function() { 
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
-      var d = dist(this.x, this.y, pos.x, pos.y);
-      if (d < 20) {
-        this.total = 0;
-        this.score = 0;
-        this.tail = [];
+      var dx1 = dist(this.x, this.y, playfieldW, this.y);
+      var dx2 = dist(this.x, this.y, 0, this.y);
+      var dy1 = dist(this.x, this.y, this.x, 0);
+      var dy2 = dist(this.x, this.y, this.x, playfieldH);
+      if (dx1 <= 10 || dx2 <= 10 || dy1 <= 10 || dy2 <= 50) {
+        var d = dist(this.x, this.y, pos.x, pos.y);
+        if(d<=10){
+          this.total = 0;
+          this.score = 0;
+          this.tail = [];
+        }
       }
     }
-  }*/
+    
+  }
  // 뱀 움직임을 표시하기 위한 좌표 설정 
   this.update = function(){
     if (this.total === this.tail.length) {
@@ -144,8 +151,8 @@ function Snake() {
     this.tail[this.total-1] = createVector(this.x, this.y);
     this.x = this.x + this.xspeed*scl;
     this.y = this.y + this.yspeed*scl;
-    this.x = constrain(this.x, scl/2, playfield-scl/2);
-    this.y = constrain(this.y, scl/2, playfield-scl/2);
+    this.x = constrain(this.x, scl/2, playfieldW-scl/2);
+    this.y = constrain(this.y, scl/2, playfieldW-scl/2);
   }
  //함수 생성, 뱀 형태 만들기 
   this.show = function(){
@@ -162,7 +169,7 @@ function Snake() {
   this.yspeed = 0;
   this.total = 0;
   this.tail = [];
-  this.score = 1;
+  this.score = 1;ㅁ
   this.highscore = 1;
   }
 
