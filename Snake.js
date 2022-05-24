@@ -1,47 +1,75 @@
-//Delcare Global Variables //글로벌 변수 선언
 var s;
 var scl = 20;
 var food;
 var obstacle;
 var playfieldW = 600;
 var playfieldH = 640;
-// p5js Setup function - required required, setup 함수
+var check = 0;
+let pg;
+let pg1;
+let pg2;
+let scorepg;
 function setup() {
-  createCanvas(playfieldW, playfieldH); //캔버스 생성
-  background(51); //배경색
-  s = new Snake(); //스네이크 함수 생성
-  frameRate (10);//프레임 시작값은 60이기 때문에 속도를 조정해 줌
-  foodLocatrion(); //foodLocatrion 함수 생성
+  createCanvas(playfieldW, playfieldH);
+  pg = createGraphics(playfieldW, playfieldH);
+  pg1 = createGraphics(playfieldW,playfieldH);
+  scorepg = createGraphics(600,640);
+  background(51);
+  s = new Snake();
+  frameRate (10);
+  foodLocatrion(); 
   ObstacleLocatrion();
 }
-// p5js Draw function - required
-function draw() {
-  background(51); //배경색 설정
-  scoreboard(); //scoreboard 함수 실행
-  if (s.eatf(food)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
-    foodLocatrion(); //foodLocatrion 함수 실행
-  }
-  if (s.eato(obstacle)) { //Snake 함수 안의 eat 함수가 true 일 때 실행
-  ObstacleLocatrion(); //foodLocatrion 함수 실행
-  }
-  s.death(); // Snake 함수 안의 death 함수 실행
-  s.update(); // Snake 함수 안의 update 함수 실행
-  s.show(); // Snake 함수 안의 show 함수 실행
-  fill (255,0,100); 
-  ellipse(food.x,food.y, scl, scl); // 음식 생성
-  fill (0,255,0); 
-  ellipse(obstacle.x,obstacle.y, scl, scl);
+function Check(){
+  check = 2;
 }
-// Pick a location for food to appear //음식 표시 위치 선택 함수
+function draw() {
+  if(check == 0){
+    pg.fill(255,0,0);
+    image(pg, 0, 0);
+    for(var i = 0; i < 15 ; i++){
+      for(var j = 0; j < 16 ; j++){
+        rect(0+40*i,0+40*j,40,40);
+      }
+    }
+    textFont("Georgia");
+    textSize(56);
+    text("Press SPACE to start",42,520);
+  }
+  else if(check == 1){
+    pg1.background(0);
+    fill(255);
+    image(pg1,0,0);
+    for(var i = 0; i < 15 ; i++){
+      for(var j = 0; j < 16 ; j++){
+        rect(0+40*i,0+40*j,40,40);
+      }
+    }
+    fill('red');
+    textFont("Georgia");
+    textSize(56);
+    text("Game Over",160,320);
+  }
+  else{
+    background(51);
+    scoreboard(); 
+    if (s.eatf(food)){ foodLocatrion(); }
+    if (s.eato(obstacle)) { ObstacleLocatrion(); }
+    s.death(); 
+    s.update(); 
+    s.show(); 
+    fill (255,0,100); 
+    ellipse(food.x,food.y, scl, scl); 
+    fill (0,255,0); 
+    ellipse(obstacle.x,obstacle.y, scl, scl);
+  }
+}
 function foodLocatrion() { 
-  // var cols = floor(playfieldW/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
   var rows = floor(playfieldW/scl); 
   cols = floor(random(30))*scl;
   rows = floor(random(30))*scl;
   food = createVector(10, 10);
-  food.add(cols,rows); //백터에 scl를 더함
-  //food.mult(scl);
-  // Check the food isn't appearing inside the tail
+  food.add(cols,rows);
   for (var i = 0; i < s.tail.length; i++) { 
     var pos = s.tail[i];
     var d = dist(food.x, food.y, pos.x, pos.y);
@@ -50,16 +78,12 @@ function foodLocatrion() {
     }
   }
 }
-//장애물 위치 설정
 function ObstacleLocatrion() { 
-  // var cols = floor(playfieldW/scl); /반 내림할 숫자, 매개변수의 작거나 같은 수 중 가장 가까운 정수 
   var rows = floor(playfieldW/scl); 
   cols = floor(random(30))*scl;
   rows = floor(random(30))*scl;
   obstacle = createVector(10, 10);
-  obstacle.add(cols,rows); //백터에 scl를 더함
-  //food.mult(scl);
-  // Check the food isn't appearing inside the tail
+  obstacle.add(cols,rows); 
   for (var i = 0; i < s.tail.length; i++) { 
     var pos = s.tail[i];
     var d = dist(obstacle.x, obstacle.y, pos.x, pos.y);
@@ -68,11 +92,10 @@ function ObstacleLocatrion() {
     }
   }
 }
-// scoreboard
-function scoreboard() { //점수판 
+function scoreboard() {  
   fill(0);
-  rect(0, 600, 600, 40);
-  fill(255);
+  //rect(0, 600, 600, 40);
+  //fill(255);
   textFont("Georgia");
   textSize(18);
   text("Score: ", 10, 625);
@@ -81,7 +104,6 @@ function scoreboard() { //점수판
   text(s.highscore, 540, 625)
 }
 
-// SNAKE OBJECT 스네이크 오브젝트 
 function Snake() {
   this.x =10; // 시작 좌표값이 사각형과는 다르게 10 이 되어야 기존 사각형에서 0,0 이던 값에서 출발한다. 아닐 경우 원이 잘려서 시작해서 픽셀이 깨져서 나온다.
   this.y =10; // 이하동문
@@ -115,31 +137,16 @@ function Snake() {
   this.eato = function(pos) { 
     var d = dist(this.x, this.y, pos.x, pos.y); // 장애물과 뱀의 거리를 구한다.
     if (d < 1) { //d<1 : 뱀이 장애물을 먹었을 때,
-      this.total=0;
-      this.score=0;
-      this.tail = [];
+      this.reset();
       return true; //true 반환
     } else {
       return false; //false 반환
     }
 }
   this.death = function() { 
-    for (var i = 0; i < this.tail.length; i++) {
-      var pos = this.tail[i];
-      var dx1 = dist(this.x, this.y, playfieldW, this.y);
-      var dx2 = dist(this.x, this.y, 0, this.y);
-      var dy1 = dist(this.x, this.y, this.x, 0);
-      var dy2 = dist(this.x, this.y, this.x, playfieldH);
-      if (dx1 <= 10 || dx2 <= 10 || dy1 <= 10 || dy2 <= 50) {
-        var d = dist(this.x, this.y, pos.x, pos.y);
-        if(d<=10){
-          this.total = 0;
-          this.score = 0;
-          this.tail = [];
-        }
-      }
+    if(this.x<10||this.x>590||this.y<10||this.y>590){
+      this.reset();
     }
-    
   }
  // 뱀 움직임을 표시하기 위한 좌표 설정 
   this.update = function(){
@@ -151,8 +158,8 @@ function Snake() {
     this.tail[this.total-1] = createVector(this.x, this.y);
     this.x = this.x + this.xspeed*scl;
     this.y = this.y + this.yspeed*scl;
-    this.x = constrain(this.x, scl/2, playfieldW-scl/2);
-    this.y = constrain(this.y, scl/2, playfieldW-scl/2);
+    this.x = constrain(this.x, scl/2-20, playfieldW-scl/2+20);
+    this.y = constrain(this.y, scl/2-20, playfieldW-scl/2+20);
   }
  //함수 생성, 뱀 형태 만들기 
   this.show = function(){
@@ -162,20 +169,18 @@ function Snake() {
     }
     ellipse(this.x, this.y, scl, scl);
   }
-  this.reset = function(){ //Reset을 위한 함수를 따로 생성함. 첫 시작값과 똑같이 감.
-  this.x =10;
-  this.y =10;
-  this.xspeed = 1;
-  this.yspeed = 0;
-  this.total = 0;
-  this.tail = [];
-  this.score = 1;ㅁ
-  this.highscore = 1;
+  this.reset = function(){
+    this.x = 30;
+    this.y = 30;
+    this.xspeed = 0;
+    this.yspeed = 0;
+    this.total = 0;
+    this.score = 0;
+    this.tail = [];
+    check = 1;
   }
-
 }
-  
-  function keyPressed() { //키보드 인식 , reset 키 
+function keyPressed() { //키보드 인식 , reset 키 
   if (keyCode === UP_ARROW){
       s.dir(0, -1);
   }else if (keyCode === DOWN_ARROW) {
@@ -184,7 +189,7 @@ function Snake() {
       s.dir (1, 0);
   }else if (keyCode === LEFT_ARROW) {
       s.dir (-1, 0);
-  }else if (key == '1') {
-    s.reset();
+  }else if (key == ' '){
+    Check();
   }
 }
