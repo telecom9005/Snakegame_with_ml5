@@ -39,6 +39,7 @@ function draw() {
   else if(check == 1){
     pg1.background(0);
     fill(255);
+    noStroke();
     image(pg1,0,0);
     for(var i = 0; i < 15 ; i++){
       for(var j = 0; j < 16 ; j++){
@@ -94,8 +95,8 @@ function ObstacleLocatrion() {
 }
 function scoreboard() {  
   fill(0);
-  //rect(0, 600, 600, 40);
-  //fill(255);
+  rect(0, 600, 600, 40);
+  fill(255);
   textFont("Georgia");
   textSize(18);
   text("Score: ", 10, 625);
